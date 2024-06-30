@@ -164,11 +164,11 @@ def ac():
 	
 	elif inc.variable_global.calc_mode == "Catalog":
 		
-		inc.variable_global.out1.config(text = out1_cache)
-		inc.variable_global.out2.config(text = out2_cache)
+		inc.variable_global.out1.config(text = inc.variable_global.out1_cache)
+		inc.variable_global.out2.config(text = inc.variable_global.out2_cache)
 		
-		out1_cache = ""
-		out2_cache = ""
+		inc.variable_global.out1_cache = ""
+		inc.variable_global.out2_cache = ""
 		
 		inc.variable_global.calc_mode = "Normal"
 		inc.variable_global.min_scroll, inc.variable_global.max_scroll, select_scroll = [0], [3], 0
@@ -185,8 +185,8 @@ def ac():
 		return None
 	
 	elif inc.variable_global.calc_mode == "Reset":
-		inc.variable_global.out1.config(text = out1_cache)
-		inc.variable_global.out2.config(text = out2_cache)
+		inc.variable_global.out1.config(text = inc.variable_global.out1_cache)
+		inc.variable_global.out2.config(text = inc.variable_global.out2_cache)
 		PNA_button()
 		up_down_cache()
 		inc.variable_global.calc_mode == "Normal"
@@ -606,8 +606,8 @@ def check():
 	
 	if inc.variable_global.calc_mode == "Check":
 		
-		inc.variable_global.out1.config(text = out1_cache)
-		inc.variable_global.out2.config(text = out2_cache)
+		inc.variable_global.out1.config(text = inc.variable_global.out1_cache)
+		inc.variable_global.out2.config(text = inc.variable_global.out2_cache)
 		
 		up_down_cache()
 		
@@ -625,8 +625,8 @@ def check():
 	inc.variable_global.down_cache.config(fg = "black")
 	
 	if inc.variable_global.calc_mode != "":
-		out1_cache = inc.variable_global.out1.cget("text")
-		out2_cache = inc.variable_global.out2.cget("text")
+		inc.variable_global.out1_cache = inc.variable_global.out1.cget("text")
+		inc.variable_global.out2_cache = inc.variable_global.out2.cget("text")
 	
 	inc.variable_global.calc_mode = "Check"
 	
@@ -646,10 +646,10 @@ def check():
 	
 	name_of_data = ["B", "KB", "MB"]
 	
-	all_of_code = inc.variable_global.inc.variable_global.expression, inc.variable_global.output, inc.variable_global.inc.variable_global.ans, inc.variable_global.inc.variable_global.enter_eq, inc.variable_global.inc.variable_global.mode, \
-		inc.variable_global.inc.variable_global.imag, inc.variable_global.inc.variable_global.deci, inc.variable_global.out1_cache, inc.variable_global.out2_cache, inc.variable_global.inc.variable_global.expression_cache, \
-			inc.variable_global.inc.variable_global.cache_count, inc.variable_global.inc.variable_global.calc_mode, inc.variable_global.inc.variable_global.min_scroll, inc.variable_global.inc.variable_global.max_scroll, \
-				inc.variable_global.select_scroll, inc.variable_global.inc.variable_global.address_select, inc.variable_global.inc.variable_global.select_item, inc.variable_global.key
+	all_of_code = inc.variable_global.expression, inc.variable_global.output, inc.variable_global.ans, inc.variable_global.enter_eq, inc.variable_global.mode, \
+		inc.variable_global.imag, inc.variable_global.deci, inc.variable_global.out1_cache, inc.variable_global.out2_cache, inc.variable_global.expression_cache, \
+			inc.variable_global.cache_count, inc.variable_global.calc_mode, inc.variable_global.min_scroll, inc.variable_global.max_scroll, \
+				inc.variable_global.select_scroll, inc.variable_global.address_select, inc.variable_global.select_item, inc.variable_global.key
 	
 	all_of_code = str(all_of_code)
 	data_of_code = sys.getsizeof(all_of_code)
@@ -887,8 +887,8 @@ def reset_message():
 		return None
 	
 	if inc.variable_global.calc_mode != "Reset":
-		out1_cache = inc.variable_global.out1.cget("text")
-		out2_cache = inc.variable_global.out2.cget("text")
+		inc.variable_global.out1_cache = inc.variable_global.out1.cget("text")
+		inc.variable_global.out2_cache = inc.variable_global.out2.cget("text")
 		
 	inc.variable_global.calc_mode = "Reset"
 
@@ -928,8 +928,8 @@ def reset():
 	off_imag_num()
 	off_deci_num()
 	inc.variable_global.button_prime_number_analysis.config(state = "disable")
-	out1_cache = ""
-	out2_cache = ""
+	inc.variable_global.out1_cache = ""
+	inc.variable_global.out2_cache = ""
 	inc.variable_global.expression_cache = []
 	inc.variable_global.cache_count = -1
 	up_down_cache()
@@ -1057,8 +1057,8 @@ def catalog():
 		
 	inc.variable_global.calc_mode = "Catalog"
 	
-	out1_cache = inc.variable_global.out1.cget("text")
-	out2_cache = inc.variable_global.out2.cget("text")
+	inc.variable_global.out1_cache = inc.variable_global.out1.cget("text")
+	inc.variable_global.out2_cache = inc.variable_global.out2.cget("text")
 	
 	inc.variable_global.up_cache.config(fg = "black")
 	inc.variable_global.down_cache.config(fg = "black")

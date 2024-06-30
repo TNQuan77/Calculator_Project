@@ -200,6 +200,10 @@ def init_screen():
     inc.variable_global.button_mc = tk.Button(app, text="MC", bg="white", command=lambda: mc())
     inc.variable_global.button_mc.grid(row=14, column=2, sticky="nsew")
 
+    inc.variable_global.button_prime_number_analysis = tk.Button(app, text = "PNA", fg = "blue", command = lambda: PNA(), state = "disable")
+    inc.variable_global.button_prime_number_analysis.grid(row=14, column=3, sticky="nsew")
+
+
     return app
 
 # app = init_screen()
