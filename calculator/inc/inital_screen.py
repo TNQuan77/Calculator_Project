@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import *
 
 import inc.variable_global
-from inc.control import *
 from inc.func import *
 
 def init_screen():
